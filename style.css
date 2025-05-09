@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+    background: #f9f9f9;
+  }
+  
+  form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    padding: 0.5rem;
+    flex: 1;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: white;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
