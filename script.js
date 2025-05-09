@@ -1,5 +1,5 @@
 //site do crudcrud
-const API_BASE = 'https://crudcrud.com/apia8ec2197408f46289ac8c1705c5a1ede/clientes';
+const API_BASE = 'https://crudcrud.com/api/a8ec2197408f46289ac8c1705c5a1ede/clientes';
 const form = document.getElementById('cliente-form');
 const listaClientes = document.getElementById('lista-clientes');
 
