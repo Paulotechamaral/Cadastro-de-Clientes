@@ -1,5 +1,5 @@
 import {Cliente} from './classes.js';
-import { salvarClientes, carregarClientes, renderizarLista } from './utils';
+import { salvarClientes, carregarClientes, renderizarLista } from './utils.js';
 
 let clientes = carregarClientes();
 renderizarLista(clientes);
