@@ -1,24 +1,30 @@
-import {Cliente} from './classes.js';
-import { salvarClientes, carregarClientes, renderizarLista } from './utils.js';
+import { Cliente } from './classes.js';
+import { salvarCliente, carregarClientes, renderizarLista } from './utils.js';
 
-let clientes = carregarClientes();
-renderizarLista(clientes);
+const form = document.getElementById('cliente-form');
 
-document.getElementById('cliente-form').addEventListener('submit', (e) => {
-    e.preventDefault();
+async function inicializarApp() {
+  const clientes = await carregarClientes();
+  renderizarLista(clientes);
+}
 
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
+inicializarApp();
 
-    if (!nome || !email){
-        alert('Preencha todos os campos.');
-        return;
-    }
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-    const novoCliente = new Cliente(nome, email);
-    clientes.push(novoCliente);
-    salvarClientes(clientes);
-    renderizarLista(clientes);
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
 
-    e.target.reset();
+  if (!nome || !email) {
+    alert('Preencha todos os campos!');
+    return;
+  }
+
+  const novoCliente = new Cliente(nome, email);
+  await salvarCliente(novoCliente);
+
+  const clientesAtualizados = await carregarClientes();
+  renderizarLista(clientesAtualizados);
+  form.reset();
 });
