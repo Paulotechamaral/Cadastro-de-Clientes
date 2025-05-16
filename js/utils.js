@@ -1,4 +1,4 @@
-const API_URL = 'https://crudcrud.com/api/fef591326c6849b397d223edc3fea4b5/clientes/';
+const API_URL = 'https://crudcrud.com/api/1662cec76ebe469d8b289329b53e5a89/clientes/';
 
 // Salva um novo cliente via POST
 export async function salvarCliente(cliente) {
